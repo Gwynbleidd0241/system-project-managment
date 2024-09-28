@@ -1,3 +1,6 @@
 env: "local"
-storage_path: "postgres://admin:admin@task_db:5432/task_db?sslmode=disable"
+storage_path: "postgres://admin:admin@auth-pg:5432/auth-pg?sslmode=disable"
 logs_path: "./logs/auth_service.log"
+grpc:
+  port: 4041
+  timeout: 5s

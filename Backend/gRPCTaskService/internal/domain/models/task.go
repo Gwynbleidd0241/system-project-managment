@@ -5,4 +5,5 @@ type Task struct {
 	UserEmail   string `json:"email"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
+	IsDone      bool   `json:"is_done"`
 }

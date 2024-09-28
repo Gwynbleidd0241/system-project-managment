@@ -32,19 +32,21 @@ func (s *StorageClient) DeleteTask(ctx context.Context, taskName string) error {
 	return nil
 }
 
-func (s *StorageClient) CreateTask(ctx context.Context, task models.Task) error {
+func (s *StorageClient) CreateTask(ctx context.Context, task models.Task) (string, error) {
 	const taskDBErrorStatement = "internal/repository/tasks.go/NewTask: "
 
-	stmt := `INSERT INTO tasks (user_email, name, description) VALUES ($1, $2, $3)`
+	stmt := `INSERT INTO tasks (user_email, name, description) VALUES ($1, $2, $3) Returning id`
 
 	_, err := s.FindTaskByName(ctx, task.Name)
 	if err == nil {
-		fmt.Println(err)
-		return fmt.Errorf("task already exists")
+		return "", fmt.Errorf("task already exists")
 	}
 
-	s.Client.QueryRow(ctx, stmt, task.UserEmail, task.Name, task.Description)
-	return nil
+	err = s.Client.QueryRow(ctx, stmt, task.UserEmail, task.Name, task.Description).Scan(&task.ID)
+	if err != nil {
+		return "", fmt.Errorf("%s : %s", taskDBErrorStatement, err.Error())
+	}
+	return task.ID, nil
 }
 
 func (s *StorageClient) FindTaskByName(ctx context.Context, name string) (models.Task, error) {

@@ -3,76 +3,77 @@ package main
 import (
 	"context"
 	log "github.com/go-ozzo/ozzo-log"
-	"github.com/gorilla/mux"
 	"net/http"
 	"os"
 	"os/signal"
 	"sync"
 	"syscall"
+	"taskService/internal/app"
 	"taskService/internal/config"
-	"taskService/internal/http-server/handlers"
-	MWLogger "taskService/internal/http-server/middleware/logger"
 	"taskService/internal/repository"
 	"taskService/internal/service"
-	PostgreSQL "taskService/internal/storage/postgreSQL"
+	PostgreSQLClient "taskService/internal/storage/PostgreSQL"
 	"time"
 )
 
 func main() {
+
 	cfg, err := config.LoadConfig()
 
 	var wg sync.WaitGroup
-	wg.Add(2)
+	wg.Add(1)
 	quit := make(chan struct{})
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, syscall.SIGTERM, syscall.SIGINT)
 
 	if err != nil {
-		panic(err) // No point in continuing if we can't load the cfg
+		panic(err)
 	}
 
 	logger := setupLogger(cfg.Logs_path)
 	logger.Open()
 	defer logger.Close()
 
-	logger.Info("Starting task server")
+	logger.Info("Starting AuthService")
 
-	storage, err := PostgreSQL.NewStorage(context.Background(), cfg.Storage_path)
+	storage, err := PostgreSQLClient.NewStorage(context.Background(), cfg.Storage_path)
 	if err != nil {
 		logger.Error(err.Error())
 		panic(err)
 	}
 
 	storageClient := repository.New(storage)
+
 	taskService := service.New(logger, storageClient)
+	application := app.New(logger, cfg.GRPCConfig.GRPC_port, taskService)
 
-	router := mux.NewRouter()
-	router.Use(MWLogger.New(logger))
-	handler := handlers.NewHandler(router, taskService)
+	go startGRPCServer(logger, application, &wg, quit)
 
-	server := &http.Server{
-		Addr:         "0.0.0.0:8080",
-		Handler:      handler,
-		ReadTimeout:  15 * time.Second,
-		WriteTimeout: 15 * time.Second,
-	}
-
-	go startHTTPServer(logger, server, &wg, quit)
 	<-stop
 	close(quit)
 	wg.Wait()
-
 }
 
-func setupLogger(loggsPath string) *log.Logger {
+func setupLogger(logsPath string) *log.Logger {
 	logger := log.NewLogger()
 
 	t1 := log.NewConsoleTarget()
 	t2 := log.NewFileTarget()
-	t2.FileName = loggsPath
+	t2.FileName = logsPath
 	logger.Targets = append(logger.Targets, t1, t2)
 
 	return logger
+}
+
+func startGRPCServer(logger *log.Logger, application *app.App, wg *sync.WaitGroup, quit chan struct{}) {
+	defer wg.Done()
+
+	go func() {
+		<-quit
+		logger.Info("Завершение gRPC сервера...")
+		application.GRPCServer.Stop()
+	}()
+	application.GRPCServer.MustRun()
 }
 
 func startHTTPServer(logger *log.Logger, server *http.Server, wg *sync.WaitGroup, quit chan struct{}) {

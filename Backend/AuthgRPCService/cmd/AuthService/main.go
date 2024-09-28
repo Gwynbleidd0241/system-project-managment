@@ -16,13 +16,6 @@ import (
 	"time"
 )
 
-// @title AuthService API
-// @version 1.0
-// @description This is API for user registration and login.
-// @termsOfService http://swagger.io/terms/
-
-// @host localhost:8080
-// @BasePath /
 func main() {
 
 	cfg, err := config.LoadConfig()

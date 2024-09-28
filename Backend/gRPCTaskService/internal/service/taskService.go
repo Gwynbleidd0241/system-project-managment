@@ -13,21 +13,21 @@ type TaskService struct {
 }
 
 type TasksProvider interface {
-	CreateTask(ctx context.Context, task models.Task) error
+	CreateTask(ctx context.Context, task models.Task) (string, error)
 	FindAllTasks(ctx context.Context, email string) ([]models.Task, error)
 	UpdateTask(ctx context.Context, task models.Task) error
 	DeleteTask(ctx context.Context, taskName string) error
 }
 
-func (t *TaskService) CreateTask(ctx context.Context, task models.Task) error {
+func (t *TaskService) CreateTask(ctx context.Context, task models.Task) (string, error) {
 	const op = "TaskService.CreateTask"
 
-	err := t.provider.CreateTask(ctx, task)
+	id, err := t.provider.CreateTask(ctx, task)
 	if err != nil {
 		t.logger.Error(op, err)
-		return fmt.Errorf("%s: %w", op, err)
+		return "", fmt.Errorf("%s: %w", op, err)
 	}
-	return nil
+	return id, nil
 }
 
 func (t *TaskService) DeleteTask(ctx context.Context, taskName string) error {
@@ -56,6 +56,11 @@ func (t *TaskService) UpdateTask(ctx context.Context, task models.Task) error {
 		return fmt.Errorf("%s: %w", op, err)
 	}
 	return nil
+}
+
+func (t *TaskService) FindAllTasks(ctx context.Context, email string) ([]models.Task, error) {
+	//TODO implement me
+	panic("implement me")
 }
 
 func New(logger *log.Logger, provider TasksProvider) *TaskService {

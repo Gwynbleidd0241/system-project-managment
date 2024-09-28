@@ -7,6 +7,7 @@ import (
 	"mainHTTP/internal/clients"
 	"mainHTTP/internal/config"
 	"mainHTTP/internal/http-server/handlers"
+	MWCORSE "mainHTTP/internal/http-server/middleware/corse"
 	MWLogger "mainHTTP/internal/http-server/middleware/logger"
 	"net/http"
 	"os"
@@ -39,6 +40,7 @@ func main() {
 
 	router := mux.NewRouter()
 	router.Use(MWLogger.New(logger))
+	router.Use(MWCORSE.New())
 	handler := handlers.NewHandler(logger, router, client)
 
 	server := &http.Server{

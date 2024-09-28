@@ -11,14 +11,12 @@ type Config struct {
 	Env          string `yaml:"env" yaml-default:"local"`
 	Storage_path string `yaml:"storage_path" env-required:"true"`
 	Logs_path    string `yaml:"logs_path" env-required:"true"`
-	Client       Client `yaml:"client"`
-	AppSercet    string `yaml:"app_secret" env-required:"true"`
+	GRPCConfig   `yaml:"grpc"`
 }
 
-type Client struct {
-	Address string        `yaml:"address" env-required:"true"`
-	Timeout time.Duration `yaml:"timeout" yaml-default:"5s"`
-	Retries int           `yaml:"retries" yaml-default:"3"`
+type GRPCConfig struct {
+	GRPC_port string        `yaml:"port" yaml-default:"4040"`
+	Timeout   time.Duration `yaml:"timeout" yaml-default:"5s"`
 }
 
 func LoadConfig() (*Config, error) {
