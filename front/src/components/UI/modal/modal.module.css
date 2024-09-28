@@ -1,0 +1,39 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.modalContent {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  max-width: 400px; 
+  width: 90%; 
+  margin: 0 auto; 
+}
+
+.modalContent input {
+  border-radius: 16px;
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+button{
+  border-radius: 16px;
+}
