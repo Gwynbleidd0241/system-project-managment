@@ -4,23 +4,22 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - task-service
       - auth-service
     networks:
       - app-network
 
-  task-service:
-    build: ./gRPCTaskService
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: task_db
-    ports:
-      - "4041:4041"
-    depends_on:
-      - task-pg
-    networks:
-      - app-network
+#  task-service:
+#    build: ./gRPCTaskService
+#    environment:
+#      POSTGRES_USER: admin
+#      POSTGRES_PASSWORD: admin
+#      POSTGRES_DB: task_db
+#    ports:
+#      - "4041:4041"
+#    depends_on:
+#      - task-pg
+#    networks:
+#      - app-network
 
   auth-service:
     build: ./AuthgRPCService
