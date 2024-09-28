@@ -1,0 +1,11 @@
+logs_path: "./logs/auth_service.log"
+secret_key: "secretKEY"
+auth_grpc:
+  port: 4040
+task_grpc:
+  port: 4041
+notification_grpc:
+  port: 4042
+main_http:
+  port: 8080
+  timeout: 5s

@@ -1,7 +1,0 @@
-env: "local"
-storage_path: "postgres://admin:admin@auth_db:5432/auth_db?sslmode=disable"
-logs_path: "./logs/auth_service.log"
-token_ttl: 30h
-grpc:
-  port: 4040
-  timeout: 5s
