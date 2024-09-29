@@ -2,6 +2,8 @@ github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak
 github.com/BurntSushi/toml v1.2.1/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
 github.com/Dragzet/gRPCProtos v0.0.0-20240928200319-2f0b5d0e0b89 h1:K0Bcthev7vDZczbp+PfAq+xTuESYyHi2SAMOR3FHfgQ=
 github.com/Dragzet/gRPCProtos v0.0.0-20240928200319-2f0b5d0e0b89/go.mod h1:B50oxAW9pAJ3Pv5sToD991A0PxiHy4qK+O3691W7ghM=
+github.com/Dragzet/gRPCProtosv2 v0.0.0-20240928231019-c3ccb3e96496 h1:fNt0msLqSW9ddtyI1AWXqC+BNjiVJE9VbOwPTQBiKHA=
+github.com/Dragzet/gRPCProtosv2 v0.0.0-20240928231019-c3ccb3e96496/go.mod h1:lIzqA5eRf8lmYWPJvkX2gW4HsZOR/QLLd01HH8e39RQ=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-ozzo/ozzo-config v0.0.0-20160627170238-0ff174cf5aa6 h1:T2JpXPk0mDD6uTT6vAwmd6pmaPqiHsBvP9Ggjr3UpE4=

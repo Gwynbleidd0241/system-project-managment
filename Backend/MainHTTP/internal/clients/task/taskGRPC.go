@@ -3,7 +3,7 @@ package task
 import (
 	"context"
 	"fmt"
-	apiv1 "github.com/Dragzet/gRPCProtos/gen/go/task"
+	apiv1 "github.com/Dragzet/gRPCProtosv2/gen/go/task"
 	log "github.com/go-ozzo/ozzo-log"
 	grpclog "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
 	grpcretry "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/retry"
@@ -20,6 +20,7 @@ type TaskClient struct {
 
 func New(ctx context.Context, logger *log.Logger, addr string, retriesCount int) (*TaskClient, error) {
 	const op = "grpc.New"
+	addr = "task-service:" + addr
 
 	retryOpts := []grpcretry.CallOption{
 		grpcretry.WithCodes(codes.NotFound, codes.Aborted, codes.DeadlineExceeded),
@@ -86,4 +87,15 @@ func (c *TaskClient) UpdateTask(ctx context.Context, task *apiv1.UpdateTaskReque
 	}
 
 	return resp.Success, nil
+}
+
+func (c *TaskClient) GetTasks(ctx context.Context, email string) ([]*apiv1.Task, error) {
+	const op = "grpc.Task"
+
+	resp, err := c.api.GetTasks(ctx, &apiv1.GetTasksRequest{Email: email})
+	if err != nil {
+		return nil, fmt.Errorf("%s: %w", op, err)
+	}
+
+	return resp.Tasks, nil
 }

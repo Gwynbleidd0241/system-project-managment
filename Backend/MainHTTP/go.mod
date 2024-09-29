@@ -3,7 +3,6 @@ module mainHTTP
 go 1.23.1
 
 require (
-	github.com/Dragzet/gRPCProtos v0.0.0-20240928200319-2f0b5d0e0b89
 	github.com/go-ozzo/ozzo-log v0.0.0-20160703175702-610cdd147d9a
 	github.com/gorilla/mux v1.8.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.1.0
@@ -13,6 +12,7 @@ require (
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
+	github.com/Dragzet/gRPCProtosv2 v0.0.0-20240928231019-c3ccb3e96496 // indirect
 	github.com/go-ozzo/ozzo-config v0.0.0-20160627170238-0ff174cf5aa6 // indirect
 	github.com/hnakamur/jsonpreprocess v0.0.0-20171017030034-a4e954386171 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect

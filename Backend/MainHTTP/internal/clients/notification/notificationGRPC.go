@@ -3,7 +3,7 @@ package notification
 import (
 	"context"
 	"fmt"
-	apiv1 "github.com/Dragzet/gRPCProtos/gen/go/notification"
+	apiv1 "github.com/Dragzet/gRPCProtosv2/gen/go/notification"
 	log "github.com/go-ozzo/ozzo-log"
 	grpclog "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
 	grpcretry "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/retry"

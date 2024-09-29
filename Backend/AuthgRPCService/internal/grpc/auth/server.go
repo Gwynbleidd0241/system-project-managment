@@ -4,7 +4,7 @@ import (
 	customErrors "authService/internal/errors"
 	"context"
 	"errors"
-	authv1 "github.com/Dragzet/gRPCAuthProtos/gen/go/auth"
+	authv1 "github.com/Dragzet/gRPCProtosv2/gen/go/auth"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

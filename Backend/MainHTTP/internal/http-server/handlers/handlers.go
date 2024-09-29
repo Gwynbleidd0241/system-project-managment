@@ -28,10 +28,10 @@ type AuthHandler interface {
 }
 
 func (h *Handler) RegistNewTaskHandlers() {
-	//h.router.HandleFunc("/task", h.CreateTask).Methods(http.MethodPost)
-	//h.router.HandleFunc("/task", h.UpdateTask).Methods(http.MethodPut)
-	//h.router.HandleFunc("/task", h.GetTasks).Methods(http.MethodGet)
-	//h.router.HandleFunc("/task", h.DeleteTask).Methods(http.MethodDelete)
+	h.router.HandleFunc("/api/task", h.CreateTask).Methods(http.MethodPost)
+	h.router.HandleFunc("/api/task", h.UpdateTask).Methods(http.MethodPut)
+	h.router.HandleFunc("/api/task", h.GetTasks).Methods(http.MethodGet)
+	h.router.HandleFunc("/api/task", h.DeleteTask).Methods(http.MethodDelete)
 }
 
 func (h *Handler) RegistAuthHandlers() {

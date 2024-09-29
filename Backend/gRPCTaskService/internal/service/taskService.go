@@ -30,14 +30,14 @@ func (t *TaskService) CreateTask(ctx context.Context, task models.Task) (string,
 	return id, nil
 }
 
-func (t *TaskService) DeleteTask(ctx context.Context, taskName string) error {
+func (t *TaskService) DeleteTask(ctx context.Context, taskID string) error {
 	const op = "TaskService.DeleteTask"
 
-	if taskName == "" {
+	if taskID == "" {
 		return fmt.Errorf("%w: task name is empty", op)
 	}
 
-	err := t.provider.DeleteTask(ctx, taskName)
+	err := t.provider.DeleteTask(ctx, taskID)
 	if err != nil {
 		t.logger.Error(op, err)
 		return fmt.Errorf("%s: %w", op, err)
@@ -59,8 +59,16 @@ func (t *TaskService) UpdateTask(ctx context.Context, task models.Task) error {
 }
 
 func (t *TaskService) FindAllTasks(ctx context.Context, email string) ([]models.Task, error) {
-	//TODO implement me
-	panic("implement me")
+	const op = "TaskService.FindAllTasks"
+	if email == "" {
+		return nil, fmt.Errorf("%w: email is empty", op)
+	}
+	tasks, err := t.provider.FindAllTasks(ctx, email)
+	if err != nil {
+		t.logger.Error(op, err)
+		return nil, fmt.Errorf("%s: %w", op, err)
+	}
+	return tasks, nil
 }
 
 func New(logger *log.Logger, provider TasksProvider) *TaskService {

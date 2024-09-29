@@ -12,7 +12,7 @@ import (
 	"taskService/internal/config"
 	"taskService/internal/repository"
 	"taskService/internal/service"
-	PostgreSQLClient "taskService/internal/storage/PostgreSQL"
+	"taskService/internal/storage/postgreSQL"
 	"time"
 )
 
@@ -36,7 +36,7 @@ func main() {
 
 	logger.Info("Starting AuthService")
 
-	storage, err := PostgreSQLClient.NewStorage(context.Background(), cfg.Storage_path)
+	storage, err := PostgreSQL.NewStorage(context.Background(), cfg.Storage_path)
 	if err != nil {
 		logger.Error(err.Error())
 		panic(err)

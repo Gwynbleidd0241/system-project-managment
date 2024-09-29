@@ -15,8 +15,6 @@ func (h *Handler) LoginUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	h.logger.Info(user.Email, user.PassHash)
-
 	token, err := h.client.Login(r.Context(), user.Email, user.PassHash)
 	if err != nil {
 		h.logger.Error("Handlers.LoginUser: " + err.Error())

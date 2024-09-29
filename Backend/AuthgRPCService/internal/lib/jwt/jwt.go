@@ -10,7 +10,7 @@ func NewToken(user models.User, duration time.Duration) (string, error) {
 
 	// TODO: Add normal secret key
 
-	secret := "verySecretKEY"
+	secret := "secretKEY"
 
 	token := jwt.New(jwt.SigningMethodHS256)
 	claims := token.Claims.(jwt.MapClaims)
