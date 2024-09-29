@@ -48,9 +48,9 @@ const EnterModal = ({ visible, setVisible, isAuthorized, setIsAuthorized, setTas
     })
     .catch(error => {
         setError('Ошибка входа. Сервер не отвечает.');
-        setTimeout(() => {
-            handleClose(); // закрываем модальное окно после успешной регистрации
-        }, 2000);
+        // setTimeout(() => {
+        //     handleClose(); // закрываем модальное окно после успешной регистрации
+        // }, 2000);
     });
 };
 
@@ -80,7 +80,6 @@ const EnterModal = ({ visible, setVisible, isAuthorized, setIsAuthorized, setTas
   return (
     <div className={rootClasses.join(" ")} onClick={handleClose}>
       <div className={cl.modalContent} onClick={(e) => e.stopPropagation()}>
-        <h2>Вход</h2>
         <form onSubmit={handleSubmit}>
           <label>
             Логин:

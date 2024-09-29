@@ -25,7 +25,7 @@ const NewTaskModal = ({ visible, setVisible, onCreateTask }) => {
         console.error('Ошибка создания задачи');
       } else {
         const newTask = {
-          id: userId,
+          ID: userId,
           title: title,
           body: body,
         };

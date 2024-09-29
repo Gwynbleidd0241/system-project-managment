@@ -59,7 +59,6 @@ const Modal = ({ children, visible, setVisible, isAuthorized, setIsAuthorized })
   return (
     <div className={rootClasses.join(" ")} onClick={handleClose}>
       <div className={cl.modalContent} onClick={(e) => e.stopPropagation()}>
-        <h2>Регистрация</h2>
         <form onSubmit={handleSubmit}>
           <label>
             Логин:

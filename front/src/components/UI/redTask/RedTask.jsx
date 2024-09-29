@@ -37,7 +37,7 @@ const RedTask = (props) => {
         .then(response => {
           const status = response.status;
           if (status) {
-            props.onSaveTask({ id: props.task.ID, title, body });
+            props.onSaveTask({ id: props.task.ID, title: title, body: body});
             props.setVisible(false);
           } else {
             console.error('Ошибка редактирования задачи');
@@ -75,7 +75,7 @@ const RedTask = (props) => {
               <h2>Редактировать задачу</h2>
             </div>
             <div className={styles.redTask__body}>
-              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Название задачи" />
+              <input disabled type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Название задачи" />
               <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="Описание задачи" />
             </div>
             <div className={styles.redTask__footer}>

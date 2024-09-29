@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './styles/App.css';
 import TaskItem from "./components/TaskItem.jsx";
 import MyButton from "./components/UI/button/MyButton.jsx";
@@ -6,7 +6,7 @@ import Modal from "./components/UI/modal/Modal.jsx";
 import NewTaskModal from "./components/UI/newTask/NewTaskModal.jsx";
 import RedTask from "./components/UI/redTask/RedTask.jsx";
 import EnterModal from "./components/UI/EnterModal/EnterModal.jsx";
-
+import axios from "axios";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -41,7 +41,7 @@ function App() {
   };
 
   const onSaveTask = (task) => {
-    setTasks([...tasks.map(t => t.ID === task.ID ? task : t)]);
+    setTasks([...tasks.map(t => t.id === task.id ? task : t)]);
     setRedTaskModal(false);
   };
 
@@ -63,14 +63,15 @@ function App() {
     {enterVisible && (<EnterModal visible={enterVisible} setVisible={setEnterVisible} isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized} setTasks={setTasks} />)}
     <NewTaskModal visible={newTaskModal} setVisible={setNewTaskModal} onCreateTask={onCreateTask} />
     <RedTask visible={redTaskModal} setVisible={setRedTaskModal} task={currentTask} onSaveTask={onSaveTask} onDeleteTask={removeTask} />
-    <div>
-      {showAll ? (
-        <MyButton onClick={handleShowAll}>Скрыть все</MyButton>
-      ) : (
-        <MyButton onClick={handleShowAll}>Показать все</MyButton>
-      )}
-    </div>
-      {isAuthorized ? (
+    {isAuthorized ? (
+      <div className="tasks__container">
+        <div className="Shower">
+          {showAll ? (
+            <MyButton onClick={handleShowAll}>Скрыть все</MyButton>
+          ) : (
+            <MyButton onClick={handleShowAll}>Показать все</MyButton>
+           )}
+        </div>
         <div className="tasks__fiels">
           {showAll ? (
             tasks.map((task, index) => {
@@ -92,9 +93,10 @@ function App() {
             })
           )}
           <TaskItem
-          task={{ id: null, title: "Создать новую задачу", body: "" }}
+          task={{ ID: null, title: "Создать новую задачу", body: "" }}
           onClick={() => setNewTaskModal(true)}/>
         </div>
+      </div>
       ) : (
         <p></p>
       )}
