@@ -1,0 +1,28 @@
+2024-09-28T15:41:23+03:00 [Info][app] Starting task server
+2024-09-28T15:41:57+03:00 [Info][app] Starting task server
+2024-09-29T01:39:27+03:00 [Info][app] Starting AuthService
+2024-09-29T01:39:27+03:00 [Info][app] Starting gRPC server at port 4041
+2024-09-29T01:39:37+03:00 [Error][app] TaskService.CreateTask%!(EXTRA *errors.errorString=internal/repository/tasks.go/NewTask:  : failed to connect to `user=admin database=auth-pg`: hostname resolving error: lookup auth-pg: no such host)
+2024-09-29T01:39:41+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-29T01:39:41+03:00 [Info][app] Stopping gRPC server
+2024-09-29T02:34:53+03:00 [Info][app] Starting AuthService
+2024-09-29T02:34:53+03:00 [Info][app] Starting gRPC server at port 4041
+2024-09-29T02:34:53+03:00 [Error][app] failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :4041: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run)
+2024-09-29T02:34:53+03:00 [Error][app] Failed to start AuthService%!(EXTRA string=error, *errors.errorString=failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :4041: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run))
+2024-09-29T02:35:03+03:00 [Info][app] Starting AuthService
+2024-09-29T02:35:03+03:00 [Info][app] Starting gRPC server at port 4041
+2024-09-29T02:35:26+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-29T02:35:26+03:00 [Info][app] Stopping gRPC server
+2024-09-29T02:35:27+03:00 [Info][app] Starting AuthService
+2024-09-29T02:35:27+03:00 [Info][app] Starting gRPC server at port 4041
+2024-09-29T02:35:59+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-29T02:35:59+03:00 [Info][app] Stopping gRPC server
+2024-09-29T02:37:02+03:00 [Info][app] Starting AuthService
+2024-09-29T02:37:02+03:00 [Info][app] Starting gRPC server at port 4041
+2024-09-29T02:37:40+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-29T02:37:40+03:00 [Info][app] Stopping gRPC server
+2024-09-29T02:37:41+03:00 [Info][app] Starting AuthService
+2024-09-29T02:37:41+03:00 [Info][app] Starting gRPC server at port 4041
+2024-09-29T02:37:48+03:00 [Error][app] TaskService.CreateTask%!(EXTRA *errors.errorString=internal/repository/tasks.go/NewTask:  : failed to connect to `user=admin database=task-pg`: hostname resolving error: lookup task-pg: no such host)
+2024-09-29T02:37:50+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-29T02:37:50+03:00 [Info][app] Stopping gRPC server

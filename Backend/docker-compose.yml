@@ -1,0 +1,77 @@
+services:
+  http-server:
+    build: ./MainHTTP
+    ports:
+      - "8080:8080"
+    depends_on:
+      - auth-service
+    networks:
+      - app-network
+
+  task-service:
+    build: ./gRPCTaskService
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: task_db
+    ports:
+      - "4041:4041"
+    depends_on:
+      - task-pg
+    networks:
+      - app-network
+
+  auth-service:
+    build: ./AuthgRPCService
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: auth_db
+    ports:
+      - "4040:4040"
+    depends_on:
+      - auth-pg
+    networks:
+      - app-network
+
+#  notification-service:
+#    build: ./microservice2
+#    networks:
+#      - app-network
+#    ports:
+#      - "4042:4042"
+
+  task-pg:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: task-pg
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql-init/task-init.sql:/docker-entrypoint-initdb.d/task-init.sql
+      - task-pg:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  auth-pg:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: auth-pg
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./sql-init/auth-init.sql:/docker-entrypoint-initdb.d/auth-init.sql
+      - auth-pg:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+volumes:
+  task-pg:
+  auth-pg:
+
+networks:
+  app-network:

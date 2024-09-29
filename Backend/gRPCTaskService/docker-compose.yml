@@ -1,0 +1,35 @@
+services:
+  task_db:
+    container_name: task_db
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: task_db
+    volumes:
+      - data:/var/lib/postgresql/data
+      - ./storage/task-auth-init.sql:/docker-entrypoint-initdb.d/task-auth-init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
+
+  task_app:
+    build: .
+    depends_on:
+      - task_db
+    container_name: task_app
+    volumes:
+      - ./config/config.yaml:/root/config.yaml
+    ports:
+      - "8080:8080"
+    networks:
+      - app_network
+
+volumes:
+  data:
+
+networks:
+  app_network:
+    driver: bridge

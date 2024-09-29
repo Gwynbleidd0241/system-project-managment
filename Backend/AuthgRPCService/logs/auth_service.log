@@ -1,0 +1,82 @@
+2024-09-27T09:33:30+03:00 [Info][app] Starting AuthService
+2024-09-27T09:33:30+03:00 [Info][app] Starting gRPC server%!(EXTRA string=port, string=)
+2024-09-27T09:34:25+03:00 [Info][app] Starting AuthService
+2024-09-27T09:34:25+03:00 [Info][app] Starting gRPC server
+2024-09-27T09:34:39+03:00 [Info][app] Starting AuthService
+2024-09-27T09:34:39+03:00 [Info][app] Starting gRPC server
+2024-09-27T09:35:00+03:00 [Info][app] Starting AuthService
+2024-09-27T09:35:00+03:00 [Info][app] Starting gRPC server4040
+2024-09-27T09:35:14+03:00 [Info][app] Starting AuthService
+2024-09-27T09:35:14+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-27T12:29:08+03:00 [Info][app] Starting AuthService
+2024-09-27T12:29:08+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-27T15:01:46+03:00 [Info][app] Starting AuthService
+2024-09-27T15:01:46+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-27T15:11:32+03:00 [Info][app] Starting AuthService
+2024-09-27T15:11:32+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-27T15:43:20+03:00 [Info][app] Starting AuthService
+2024-09-27T15:43:20+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-27T19:30:15+03:00 [Info][app] Starting AuthService
+2024-09-27T19:30:15+03:00 [Error][app] storage/BookingStorage.go:  failed to connect to database: cannot parse `./storage/auth_service.db`: failed to parse as keyword/value (invalid keyword/value)
+2024-09-27T20:10:20+03:00 [Info][app] Starting AuthService
+2024-09-27T20:10:20+03:00 [Info][app] Starting gRPC server at port 8080
+2024-09-27T20:10:20+03:00 [Error][app] failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run)
+2024-09-27T20:10:20+03:00 [Error][app] Failed to start AuthService%!(EXTRA string=error, *errors.errorString=failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run))
+2024-09-27T21:57:11+03:00 [Info][app] Starting AuthService
+2024-09-27T21:57:11+03:00 [Info][app] Starting gRPC server at port 8080
+2024-09-27T21:57:23+03:00 [Info][app] Stopping gRPC server
+2024-09-28T08:43:47+03:00 [Info][app] Starting AuthService
+2024-09-28T08:43:47+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:43:47+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:47:33+03:00 [Info][app] Starting AuthService
+2024-09-28T08:47:33+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:47:33+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:47:33+03:00 [Error][app] Ошибка HTTP сервера: %!(EXTRA *net.OpError=listen tcp 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.)
+2024-09-28T08:47:33+03:00 [Error][app] failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :4040: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run)
+2024-09-28T08:47:33+03:00 [Error][app] Failed to start AuthService%!(EXTRA string=error, *errors.errorString=failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :4040: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run))
+2024-09-28T08:48:15+03:00 [Info][app] Starting AuthService
+2024-09-28T08:48:15+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:48:15+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:50:55+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-28T08:50:55+03:00 [Info][app] Stopping gRPC server
+2024-09-28T08:50:57+03:00 [Info][app] Starting AuthService
+2024-09-28T08:50:57+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:50:57+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:51:37+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-28T08:51:37+03:00 [Info][app] Stopping gRPC server
+2024-09-28T08:53:29+03:00 [Info][app] Starting AuthService
+2024-09-28T08:53:29+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:53:29+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:54:27+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-28T08:54:27+03:00 [Info][app] Stopping gRPC server
+2024-09-28T08:54:28+03:00 [Info][app] Starting AuthService
+2024-09-28T08:54:28+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:54:28+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:54:43+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-28T08:54:43+03:00 [Info][app] Stopping gRPC server
+2024-09-28T08:55:32+03:00 [Info][app] Starting AuthService
+2024-09-28T08:55:32+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:55:32+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:55:34+03:00 [Info][app] Request from [::1]:61484: METHOD - POST || PATH - /login
+2024-09-28T08:55:34+03:00 [Info][app] Request from [::1]:61484 completed in 0s
+2024-09-28T08:55:38+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-28T08:55:38+03:00 [Info][app] Stopping gRPC server
+2024-09-28T08:56:51+03:00 [Info][app] Starting AuthService
+2024-09-28T08:56:51+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T08:56:51+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T08:56:54+03:00 [Info][app] Request from [::1]:61574: METHOD - POST || PATH - /register
+2024-09-28T08:56:54+03:00 [Info][app] Request from [::1]:61574 completed in 0s
+2024-09-28T08:59:28+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-28T08:59:28+03:00 [Info][app] Stopping gRPC server
+2024-09-28T09:01:44+03:00 [Info][app] Starting AuthService
+2024-09-28T09:01:44+03:00 [Info][app] Запуск HTTP сервера на 0.0.0.0:8080
+2024-09-28T09:01:44+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-28T09:01:47+03:00 [Info][app] Request from [::1]:61940: METHOD - POST || PATH - /register
+2024-09-28T09:01:53+03:00 [Error][app] Auth.RegisterNewUser create userModule%!(EXTRA string=internal/storage/PostgreSQL/storage.go:  create userModule: failed to connect to `user=admin database=appDB`: hostname resolving error: lookup db: no such host)
+2024-09-28T09:01:53+03:00 [Info][app] Request from [::1]:61940 completed in 5.4452526s
+2024-09-28T09:01:58+03:00 [Info][app] Завершение gRPC сервера...
+2024-09-28T09:01:58+03:00 [Info][app] Stopping gRPC server
+2024-09-29T02:14:04+03:00 [Info][app] Starting AuthService
+2024-09-29T02:14:04+03:00 [Info][app] Starting gRPC server at port 4040
+2024-09-29T02:14:04+03:00 [Error][app] failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :4040: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run)
+2024-09-29T02:14:04+03:00 [Error][app] Failed to start AuthService%!(EXTRA string=error, *errors.errorString=failed to listen%!(EXTRA string=error, *net.OpError=listen tcp :4040: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted., string=operation, string=grpcApp.Run))
