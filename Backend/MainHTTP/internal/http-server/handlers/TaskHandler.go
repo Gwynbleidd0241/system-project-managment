@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	authv1 "github.com/Dragzet/gRPCProtosv2/gen/go/task"
 	"mainHTTP/internal/domain/models"
 	"net/http"
@@ -94,6 +95,7 @@ func (h *Handler) UpdateTask(writer http.ResponseWriter, request *http.Request) 
 
 func (h *Handler) GetTasks(writer http.ResponseWriter, request *http.Request) {
 	email := request.URL.Query().Get("email")
+	fmt.Println(email)
 	grpcTasks, err := h.client.GetTasks(request.Context(), email)
 	if err != nil {
 		h.logger.Error("Handlers.GetTasks: " + err.Error())

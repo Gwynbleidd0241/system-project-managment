@@ -27,17 +27,17 @@ const RedTask = (props) => {
 
       
       const handleSave = () => {
-        axios.put('/api/tasks', {
-          id: props.task.id,
-          login: localStorage.getItem('login'),
+        axios.put('http://localhost:8080/api/task', {
+          id: props.task.ID,
+          email: localStorage.getItem('login'),
           title: title,
           body: body,
           token: localStorage.getItem('token')
         })
         .then(response => {
-          const status = response.data.status;
+          const status = response.status;
           if (status) {
-            props.onSaveTask({ id: props.task.id, title, body });
+            props.onSaveTask({ id: props.task.ID, title, body });
             props.setVisible(false);
           } else {
             console.error('Ошибка редактирования задачи');
@@ -49,16 +49,15 @@ const RedTask = (props) => {
       };
     
       const handleDelete = () => {
-        axios.delete('/api/tasks', {
+        axios.delete('http://localhost:8080/api/task', {
           params: {
-            id: props.task.id,
-            token: localStorage.getItem('token')
+            id: props.task.ID,
           }
         })
         .then(response => {
           const status = response.data.status;
           if (status) {
-            props.onDeleteTask(props.task.id);
+            props.onDeleteTask(props.task.ID);
             props.setVisible(false);
           } else {
             console.error('Ошибка удаления задачи');

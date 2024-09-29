@@ -4,6 +4,7 @@ import (
 	log "github.com/go-ozzo/ozzo-log"
 	"github.com/gorilla/mux"
 	"mainHTTP/internal/clients"
+	"mainHTTP/internal/http-server/middleware/corse"
 	"net/http"
 )
 
@@ -28,19 +29,28 @@ type AuthHandler interface {
 }
 
 func (h *Handler) RegistNewTaskHandlers() {
-	h.router.HandleFunc("/api/task", h.CreateTask).Methods(http.MethodPost)
-	h.router.HandleFunc("/api/task", h.UpdateTask).Methods(http.MethodPut)
-	h.router.HandleFunc("/api/task", h.GetTasks).Methods(http.MethodGet)
-	h.router.HandleFunc("/api/task", h.DeleteTask).Methods(http.MethodDelete)
+	h.router.Handle("/api/task", corse.New()(http.HandlerFunc(h.CreateTask))).Methods(http.MethodPost)
+	h.router.Handle("/api/task", corse.New()(http.HandlerFunc(h.UpdateTask))).Methods(http.MethodPut)
+	h.router.Handle("/api/task", corse.New()(http.HandlerFunc(h.GetTasks))).Methods(http.MethodGet)
+	h.router.Handle("/api/task", corse.New()(http.HandlerFunc(h.DeleteTask))).Methods(http.MethodDelete)
+	h.router.HandleFunc("/api/task", h.HandleOptions).Methods(http.MethodOptions)
+	//h.router.HandleFunc("/api/task", h.CreateTask).Methods(http.MethodPost)
+	//h.router.HandleFunc("/api/task", h.UpdateTask).Methods(http.MethodPut)
+	//h.router.HandleFunc("/api/task", h.GetTasks).Methods(http.MethodGet)
+	//h.router.HandleFunc("/api/task", h.DeleteTask).Methods(http.MethodDelete)
 }
 
 func (h *Handler) RegistAuthHandlers() {
-	h.router.HandleFunc("/api/login", h.LoginUser).Methods(http.MethodPost)
-	h.router.HandleFunc("/api/register", h.RegisterUser).Methods(http.MethodPost)
+	h.router.Handle("/api/login", corse.New()(http.HandlerFunc(h.LoginUser))).Methods(http.MethodPost, http.MethodOptions)
+	h.router.Handle("/api/register", corse.New()(http.HandlerFunc(h.RegisterUser))).Methods(http.MethodPost, http.MethodOptions)
 }
 
 func (h *Handler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
 	h.router.ServeHTTP(writer, request)
+}
+
+func (h *Handler) HandleOptions(writer http.ResponseWriter, request *http.Request) {
+	writer.WriteHeader(http.StatusOK)
 }
 
 func NewHandler(logger *log.Logger, router *mux.Router, client *clients.GRPCClient) *Handler {

@@ -44,7 +44,7 @@ func (s *StorageClient) FindAllTasks(ctx context.Context, email string) ([]model
 
 func (s *StorageClient) DeleteTask(ctx context.Context, id string) error {
 	const taskDBErrorStatement = "internal/repository/tasks.go/DeleteTask: "
-	stmt := `UPDATE tasks SET is_done = TRUE WHERE id = $1`
+	stmt := `DELETE FROM tasks WHERE id = $1`
 
 	_, err := s.FindTaskByID(ctx, id)
 	if err != nil {

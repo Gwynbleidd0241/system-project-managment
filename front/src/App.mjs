@@ -27,7 +27,7 @@ function App() {
 
   const removeTask = (taskId) =>{
     console.log('Удаляем задачу с id:', taskId)
-    setTasks([...tasks.filter(t => t.id !== taskId)])
+    setTasks([...tasks.filter(t => t.ID !== taskId)])
   }
 
   const onCreateTask = (task) => {
@@ -41,7 +41,7 @@ function App() {
   };
 
   const onSaveTask = (task) => {
-    setTasks([...tasks.map(t => t.id === task.id ? task : t)]);
+    setTasks([...tasks.map(t => t.ID === task.ID ? task : t)]);
     setRedTaskModal(false);
   };
 
@@ -73,12 +73,22 @@ function App() {
       {isAuthorized ? (
         <div className="tasks__fiels">
           {showAll ? (
-            tasks.map((task) => {
-              return <TaskItem remove={removeTask} task={task} key={task.id} onEdit={onEditTask} />;
+            tasks.map((task, index) => {
+              return <TaskItem 
+                key={task.ID} 
+                task={task} 
+                number={index + 1} 
+                onEdit={onEditTask} 
+            />;
             })
           ) : (
             tasks.slice(0, maxTasks).map((task, index) => {
-              return <TaskItem remove={removeTask} number={index+1} task={task} key={task.id} onEdit={onEditTask} />;
+              return <TaskItem 
+                key={task.ID} 
+                task={task} 
+                number={index + 1} 
+                onEdit={onEditTask} 
+            />;
             })
           )}
           <TaskItem

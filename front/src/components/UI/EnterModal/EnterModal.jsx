@@ -18,30 +18,48 @@ const EnterModal = ({ visible, setVisible, isAuthorized, setIsAuthorized, setTas
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/api/login', {
-      login: login,
-      password: password,
+    axios.post('http://localhost:8080/api/login', {
+        email: login,
+        password: password,
     })
     .then(response => {
-      const token = response.data.token;
-      setToken(token);
-      localStorage.setItem('token', token);
-      setIsAuthorized(true);
-      setVisible(false);
+        const token = response.data.token;
+        setToken(token);
+        localStorage.setItem('token', token);
+        localStorage.setItem("login", login);
+        setIsAuthorized(true);
+        setVisible(false);
+
+        // Второй запрос после успешной авторизации
+        return axios.get('http://localhost:8080/api/task', {
+          params: {
+            email: login
+          },
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+    })
+    .then(response => {
+      const tasks = response.data;
+      console.log(tasks) // Обеспечьте, чтобы tasks был массивом
+      setTasks(tasks);
+        localStorage.setItem('login', login);
     })
     .catch(error => {
-      setError('Ошибка входа. Сервер не отвечает.');
-      setTimeout(() => {
-        handleClose(); // закрываем модальное окно после успешной регистрации
-      }, 2000);
+        setError('Ошибка входа. Сервер не отвечает.');
+        setTimeout(() => {
+            handleClose(); // закрываем модальное окно после успешной регистрации
+        }, 2000);
     });
-  };
+};
 
   useEffect(() => {
     if (token) {
-      axios.get('/api/tasks', {
+      console.log(login)
+      axios.get('http://localhost:8080/api/task', {
         params: {
-          login: login
+          email: login
         },
         headers: {
           Authorization: `Bearer ${token}`

@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"mainHTTP/internal/domain/models"
 	"net/http"
 )
@@ -33,6 +34,8 @@ func (h *Handler) RegisterUser(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid request body", http.StatusBadRequest)
 		return
 	}
+
+	fmt.Println(user)
 
 	token, err := h.client.Register(r.Context(), user.Email, string(user.PassHash))
 	if err != nil {

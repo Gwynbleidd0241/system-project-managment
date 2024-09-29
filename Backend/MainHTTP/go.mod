@@ -16,6 +16,7 @@ require (
 	github.com/go-ozzo/ozzo-config v0.0.0-20160627170238-0ff174cf5aa6 // indirect
 	github.com/hnakamur/jsonpreprocess v0.0.0-20171017030034-a4e954386171 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
+	github.com/rs/cors v1.11.1 // indirect
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/sys v0.24.0 // indirect
 	golang.org/x/text v0.17.0 // indirect

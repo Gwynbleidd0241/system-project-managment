@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="14558ed2-e4eb-41f0-af86-0a233ea49b4c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/domain/models/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/domain/models/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/AuthHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/AuthHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/TaskHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/TaskHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/handlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/handlers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/http-server/handlers/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/http-server/handlers/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/repository/tasks.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/repository/tasks.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/TaskItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/TaskItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/UI/EnterModal/EnterModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/EnterModal/EnterModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/UI/modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/UI/newTask/NewTaskModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/newTask/NewTaskModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/UI/redTask/RedTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/redTask/RedTask.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../Program Files/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2miQscpnZO676Y6n6iU80tYdeBx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Go Build.go build authService/cmd/AuthService.executor&quot;: &quot;Run&quot;,
+    &quot;Go Build.go build taskService/cmd/task-service.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects/system-project-management/Backend/gRPCTaskService/internal&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\system-project-management\Backend\gRPCTaskService\internal" />
+      <recent name="C:\Projects\system-project-management\Backend\MainHTTP\internal\http-server\middleware" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\system-project-management\Backend" />
+      <recent name="C:\Projects\system-project-management\sql-init" />
+      <recent name="C:\Projects\system-project-management\AuthgRPCService" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build taskService/cmd/task-service">
+    <configuration name="go build authService/cmd/AuthService" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="system-project-management" />
+      <working_directory value="$PROJECT_DIR$/Backend/AuthgRPCService" />
+      <kind value="PACKAGE" />
+      <package value="authService/cmd/AuthService" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/Backend/AuthgRPCService/cmd/AuthService/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build taskService/cmd/task-service" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="system-project-management" />
+      <working_directory value="$PROJECT_DIR$/Backend/gRPCTaskService" />
+      <kind value="PACKAGE" />
+      <package value="taskService/cmd/task-service" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/Backend/gRPCTaskService/cmd/task-service/main.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build taskService/cmd/task-service" />
+        <item itemvalue="Go Build.go build authService/cmd/AuthService" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-5df93f7ad4aa-df9ad98b711f-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-242.21829.220" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-GO-242.21829.220" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

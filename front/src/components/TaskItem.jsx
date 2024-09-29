@@ -2,8 +2,8 @@ import React from "react";
 import MyButton from "./UI/button/MyButton.jsx";
 import styles from './UI/TaskItem.module.css';
 
-const TaskItem = (props) =>{
-    if (!props.task.id) {
+const TaskItem = (props) => {
+    if (!props.task.ID) {
         return (
             <div className={styles.task__content} onClick={props.onClick}>
                 <div className={styles.new__task}>
@@ -22,7 +22,7 @@ const TaskItem = (props) =>{
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default TaskItem;
