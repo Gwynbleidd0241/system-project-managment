@@ -13,7 +13,7 @@ const NewTaskModal = ({ visible, setVisible, onCreateTask }) => {
   const handleSubmit = (e) => {
     console.log(localStorage.getItem('login'))
     e.preventDefault();
-    axios.post('http://localhost:8080/api/task', {
+    axios.post('http://localhost:80/api/task', {
       title: title,
       body: body,
       email: localStorage.getItem('login'),

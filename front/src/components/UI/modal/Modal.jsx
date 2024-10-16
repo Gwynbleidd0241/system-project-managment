@@ -26,7 +26,7 @@ const Modal = ({ children, visible, setVisible, isAuthorized, setIsAuthorized })
       setSuccess(false); // сбрасываем сообщение об успешной авторизации
   
       // Send registration data to the server
-      axios.post('http://localhost:8080/api/register', {
+      axios.post('http://localhost:80/api/register', {
         email: username,
         password: password,
       })

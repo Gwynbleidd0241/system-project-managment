@@ -18,7 +18,7 @@ const EnterModal = ({ visible, setVisible, isAuthorized, setIsAuthorized, setTas
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8080/api/login', {
+    axios.post('http://localhost:80/api/login', {
         email: login,
         password: password,
     })
@@ -31,7 +31,7 @@ const EnterModal = ({ visible, setVisible, isAuthorized, setIsAuthorized, setTas
         setVisible(false);
 
         // Второй запрос после успешной авторизации
-        return axios.get('http://localhost:8080/api/task', {
+        return axios.get('http://localhost:80/api/task', {
           params: {
             email: login
           },
@@ -57,7 +57,7 @@ const EnterModal = ({ visible, setVisible, isAuthorized, setIsAuthorized, setTas
   useEffect(() => {
     if (token) {
       console.log(login)
-      axios.get('http://localhost:8080/api/task', {
+      axios.get('http://localhost:80/api/task', {
         params: {
           email: login
         },

@@ -27,7 +27,7 @@ const RedTask = (props) => {
 
       
       const handleSave = () => {
-        axios.put('http://localhost:8080/api/task', {
+        axios.put('http://localhost:80/api/task', {
           id: props.task.ID,
           email: localStorage.getItem('login'),
           title: title,
@@ -49,7 +49,7 @@ const RedTask = (props) => {
       };
     
       const handleDelete = () => {
-        axios.delete('http://localhost:8080/api/task', {
+        axios.delete('http://localhost:80/api/task', {
           params: {
             id: props.task.ID,
           }

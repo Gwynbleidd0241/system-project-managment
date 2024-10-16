@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14558ed2-e4eb-41f0-af86-0a233ea49b4c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/domain/models/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/domain/models/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/AuthHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/AuthHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/TaskHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/TaskHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/handlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/handlers/handlers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/http-server/handlers/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/http-server/handlers/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/repository/tasks.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/gRPCTaskService/internal/repository/tasks.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/TaskItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/TaskItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/UI/EnterModal/EnterModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/EnterModal/EnterModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/UI/modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/UI/newTask/NewTaskModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/newTask/NewTaskModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/UI/redTask/RedTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/UI/redTask/RedTask.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/cmd/mainHTTP/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/cmd/mainHTTP/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/middleware/logger/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/MainHTTP/internal/http-server/middleware/logger/logger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +23,14 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../Program Files/Go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -47,29 +42,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build authService/cmd/AuthService.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build taskService/cmd/task-service.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/system-project-management/Backend/gRPCTaskService/internal&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Docker.Backend.nginx: Compose Deployment.executor": "Run",
+    "Go Build.go build authService/cmd/AuthService.executor": "Run",
+    "Go Build.go build taskService/cmd/task-service.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/arhar/system-project-management",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projects\system-project-management\Backend\gRPCTaskService\internal" />
@@ -81,7 +77,7 @@
       <recent name="C:\Projects\system-project-management\AuthgRPCService" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build taskService/cmd/task-service">
+  <component name="RunManager" selected="Docker.Backend.nginx: Compose Deployment">
     <configuration name="go build authService/cmd/AuthService" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="system-project-management" />
       <working_directory value="$PROJECT_DIR$/Backend/AuthgRPCService" />
@@ -100,8 +96,26 @@
       <filePath value="$PROJECT_DIR$/Backend/gRPCTaskService/cmd/task-service/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="Backend.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="nginx" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Backend/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Backend.nginx: Compose Deployment" />
         <item itemvalue="Go Build.go build taskService/cmd/task-service" />
         <item itemvalue="Go Build.go build authService/cmd/AuthService" />
       </list>
