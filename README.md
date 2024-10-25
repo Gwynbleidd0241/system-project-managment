@@ -40,7 +40,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## Jenkins
-
 Запуск  Jenkins с использованием установленного JDK:
 ```
  /opt/homebrew/opt/openjdk@21/bin/java -Dmail.smtp.starttls.enable=true -jar /opt/homebrew/opt/jenkins-lts/libexec/jenkins.war --httpListenAddress=127.0.0.1 --httpPort=8082
